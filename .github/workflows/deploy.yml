@@ -18,10 +18,10 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
 
           script: |
-            cd AMLAnalysisWorker
+            cd ligand_generation_worker
             git pull origin main
-            docker stop analysis-worker
-            docker rm analysis-worker
-            docker rmi analysis-img
-            docker build -t analysis-img .
-            docker run -d --name analysis-worker analysis-img
+            docker stop ligand-generation-worker
+            docker rm ligand-generation-worker
+            docker rmi ligand-generation-img
+            docker build -t ligand-generation-img .
+            docker run -d --name ligand-generation-worker ligand-generation-img
