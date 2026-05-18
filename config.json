@@ -1,0 +1,64 @@
+{
+  "RabbitMQ": {
+    "host_name": "76.13.15.132",
+    "user_name": "guest",
+    "password": "guest",
+    "port": 5672,
+    "exchange_name": "AMLExchange",
+    "request_queue": "LigandReqQueue",
+    "response_queue": "LigandResQueue",
+    "response_routing_key": "ligand.res"
+  },
+  "CFR2": {
+    "ACCOUNT_ID": "34d5f9257f259ff53cfcfdba44c98c0b",
+    "ACCESS_KEY": "19203c223df28d0d5d8c0fa1db434ba1",
+    "SECRET_KEY": "698793b30f9441510b0f14f6e0563c2ce88e48621eccae0f477cb20867b5e5f5",
+    "BUCKET_NAME": "aml-analysis-storage",
+    "PUBLIC_DOMAIN": "https://pub-a36c7e0b4a1444c48def1977e87f7a9c.r2.dev"
+  },
+  "output_root": "Output",
+  "files": {
+    "log_file": "Logs/pipeline.log",
+    "gene_expression_raw": "Output/1_Gene_Expression/gene_expression_raw.csv",
+    "gene_expression_coding": "Output/1_Gene_Expression/gene_expression_coding.csv",
+    "hvgs": "Output/2_HVGS/hvgs.csv",
+    "hvgs_stats": "Output/2_HVGS/hvgs_stats.csv",
+    "module_eigengenes": "Output/3_Modules/module_eigengenes.csv",
+    "intramodular_connectivity": "Output/3_Modules/intramodular_connectivity.csv",
+    "modules_json": "Output/3_Modules/modules.json",
+    "simple_biomarkers": {
+      "top20_csv": "Output/4_Ranking/simple_biomarkers_top20.csv",
+      "summary": "Output/4_Ranking/simple_biomarkers_summary.csv",
+      "distribution_png": "Output/4_Ranking/simple_biomarkers_distribution.png",
+      "heatmap_png": "Output/4_Ranking/simple_biomarkers_heatmap.png",
+      "pca_csv": "Output/4_Ranking/simple_biomarkers_pca.csv",
+      "pca_png": "Output/4_Ranking/simple_biomarkers_pca.png",
+      "umap_csv": "Output/4_Ranking/simple_biomarkers_umap.csv",
+      "umap_png": "Output/4_Ranking/simple_biomarkers_umap.png",
+      "network_png": "Output/4_Ranking/simple_biomarkers_network.png"
+    },
+    "ranked_biomarkers": {
+      "top20_annotated": "Output/5_Biomarkers_&_Graphs/top20_annotated.csv",
+      "all_ranked": "Output/5_Biomarkers_&_Graphs/all_ranked.csv"
+    },
+    "advanced_biomarkers": {
+      "heatmap": "Output/5_Biomarkers_&_Graphs/heatmap.png",
+      "pca": "Output/5_Biomarkers_&_Graphs/pca.png",
+      "correlation_heatmap": "Output/5_Biomarkers_&_Graphs/correlation_heatmap.png",
+      "network": "Output/5_Biomarkers_&_Graphs/network.png",
+      "boxplots": "Output/5_Biomarkers_&_Graphs/boxplots.png",
+      "violins": "Output/5_Biomarkers_&_Graphs/violins.png",
+      "dendrogram": "Output/5_Biomarkers_&_Graphs/dendrogram.png",
+      "umap": "Output/5_Biomarkers_&_Graphs/umap.png"
+    },
+    "protein": {
+      "fetch_report": "Output/6_Proteins_3D/fetch_report.csv",
+      "collage": "Output/6_Proteins_3D/collage.png",
+      "combined_image": "Output/6_Proteins_3D/combined_image.png"
+    }
+  },
+  "directories": {
+    "protein_structures": "Output/6_Proteins_3D/structures",
+    "protein_images": "Output/6_Proteins_3D/images"
+  }
+}

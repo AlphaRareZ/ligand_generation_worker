@@ -1,0 +1,7 @@
+pika
+requests
+pandas
+numpy<2
+Bio
+rdkit
+boto3
