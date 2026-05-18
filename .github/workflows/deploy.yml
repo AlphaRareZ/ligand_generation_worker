@@ -16,12 +16,21 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
- 
+
           script: |
+            # 1. Navigate to the project directory
             cd ligand_generation_worker
+
+            # 2. Fetch latest changes
             git pull origin main
-            docker stop ligand-generation-worker
-            docker rm ligand-generation-worker
-            docker rmi ligand-generation-img
+
+            # 3. Safely stop and clean up old containers (will not crash if they don't exist)
+            docker stop ligand-generation-worker || true
+            docker rm ligand-generation-worker || true
+            docker rmi ligand-generation-img || true
+
+            # 4. Rebuild the image
             docker build -t ligand-generation-img .
+
+            # 5. Run the new container (Mapping a unique external port, e.g., 5001 to internal 5000)
             docker run -d --name ligand-generation-worker ligand-generation-img
